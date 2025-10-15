@@ -60,7 +60,7 @@ Dieser Prompt definiert die Design-Guidelines für ImmoScout24-konforme Artefakt
             --font-size-xxxl: 34px;
             --font-size-xxl: 26px;
             --font-size-xl: 20px;
-            --font-size-base: 15px;
+            --font-size-base: 17px;
             --font-size-sm: 14px;
             --font-size-xs: 12px;
             
