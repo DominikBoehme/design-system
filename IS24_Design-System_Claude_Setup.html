@@ -116,12 +116,12 @@
         }
 
         .step-content h3 a {
-            color: #3DF5DC;
-            text-decoration: none;
+            color: #333;
+            text-decoration: underline;
         }
 
         .step-content h3 a:hover {
-            text-decoration: underline;
+            opacity: 0.7;
         }
 
         .prompt-section {
@@ -205,29 +205,22 @@
             <div class="step">
                 <div class="step-icon">1</div>
                 <div class="step-content">
-                    <h3 id="step1-de">Öffne <a href="https://claude.ai" target="_blank">claude.ai</a></h3>
-                    <h3 id="step1-en" style="display: none;">Open <a href="https://claude.ai" target="_blank">claude.ai</a></h3>
+                    <h3 id="step1-de">Öffne <a href="https://claude.ai/settings/profile" target="_blank">claude.ai/settings/profile</a></h3>
+                    <h3 id="step1-en" style="display: none;">Open <a href="https://claude.ai/settings/profile" target="_blank">claude.ai/settings/profile</a></h3>
                 </div>
             </div>
             <div class="step">
                 <div class="step-icon">2</div>
                 <div class="step-content">
-                    <h3 id="step2-de">Profil → <strong>Settings → Profile</strong></h3>
-                    <h3 id="step2-en" style="display: none;">Profile → <strong>Settings → Profile</strong></h3>
+                    <h3 id="step2-de"><strong>"Custom instructions"</strong></h3>
+                    <h3 id="step2-en" style="display: none;"><strong>"Custom instructions"</strong></h3>
                 </div>
             </div>
             <div class="step">
                 <div class="step-icon">3</div>
                 <div class="step-content">
-                    <h3 id="step3-de"><strong>"Custom instructions"</strong></h3>
-                    <h3 id="step3-en" style="display: none;"><strong>"Custom instructions"</strong></h3>
-                </div>
-            </div>
-            <div class="step">
-                <div class="step-icon">4</div>
-                <div class="step-content">
-                    <h3 id="step4-de">Prompt <strong>GANZ OBEN</strong> einfügen → <strong>Save</strong></h3>
-                    <h3 id="step4-en" style="display: none;">Insert prompt at the <strong>VERY TOP</strong> → <strong>Save</strong></h3>
+                    <h3 id="step3-de">Prompt <strong>GANZ OBEN</strong> einfügen → <strong>Save</strong></h3>
+                    <h3 id="step3-en" style="display: none;">Insert prompt at the <strong>VERY TOP</strong> → <strong>Save</strong></h3>
                 </div>
             </div>
         </div>
@@ -314,10 +307,10 @@ These rules apply to EVERY artifact without exception and override all other des
 
             // Toggle content
             const elementsDE = ['title-de', 'subtitle-de', 'installation-title-de', 
-                               'step1-de', 'step2-de', 'step3-de', 'step4-de',
+                               'step1-de', 'step2-de', 'step3-de',
                                'prompt-title-de', 'copy-btn-de', 'footer-contact-de', 'promptCode-de'];
             const elementsEN = ['title-en', 'subtitle-en', 'installation-title-en',
-                               'step1-en', 'step2-en', 'step3-en', 'step4-en',
+                               'step1-en', 'step2-en', 'step3-en',
                                'prompt-title-en', 'copy-btn-en', 'footer-contact-en', 'promptCode-en'];
 
             if (lang === 'de') {
