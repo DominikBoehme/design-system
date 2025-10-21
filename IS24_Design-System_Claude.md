@@ -114,6 +114,52 @@ Dieser Prompt definiert die Design-Guidelines für ImmoScout24-konforme Artefakt
 
 ---
 
+## TYPOGRAFIE (KRITISCH)
+
+### Standard-Schriftgrößen - ABSOLUT VERBINDLICH
+
+**Fließtext / Body-Text:**
+```
+ALLE normalen Absätze (p): 17px (var(--font-size-base))
+ALLE Beschreibungstexte: 17px (var(--font-size-base))
+ALLE längeren Texte: 17px (var(--font-size-base))
+```
+
+**Überschriften:**
+```
+h1: 34px (var(--font-size-xxxl))
+h2: 26px (var(--font-size-xxl))
+h3: 20px (var(--font-size-xl))
+```
+
+**Nur für spezielle UI-Elemente kleiner:**
+```
+Labels / Badges: 12px (var(--font-size-xs))
+Hilfstext / Captions / Metadaten: 14px (var(--font-size-sm))
+Button-Text: 16px (explizit)
+```
+
+### VERBOTEN
+```
+❌ Fließtext mit 14px oder 15px
+❌ "Kompakter machen" durch kleinere Schrift
+❌ font-size-sm für normale Absätze oder Beschreibungen
+❌ Inline-styles die font-size unter 17px setzen (außer für Labels/Captions)
+```
+
+### ERLAUBT
+```
+✅ Alle <p> Tags ohne explizite Größenangabe = 17px
+✅ Alle Beschreibungstexte = 17px
+✅ Längere Texte auf Cards = 17px
+✅ Nur Labels und Hilfstext dürfen 12px/14px nutzen
+```
+
+**Regel-Priorisierung:**
+Bei Unsicherheit: **Immer 17px (var(--font-size-base)) für Fließtext verwenden!**
+
+---
+
 ## Grid-System
 
 ### Two-Column
@@ -351,7 +397,18 @@ ALLE Texte, Überschriften, Labels: #333333 (Charcoal)
 EINZIGE Ausnahme: Weiße Schrift NUR auf Charcoal-Hintergrund (#333)
 ```
 
-### 2. Border-Logik
+### 2. Typografie ist IMMER 17px für Fließtext
+```
+ALLE Absätze (p): 17px
+ALLE Beschreibungen: 17px
+ALLE längeren Texte: 17px
+
+NUR kleiner für:
+  - Labels: 12px
+  - Hilfstext/Captions: 14px
+```
+
+### 3. Border-Logik
 ```
 Farbige Cards (Teal, Yellow, Orange, Blue, Purple, Charcoal):
   → border: none
@@ -362,7 +419,7 @@ Weiße/Sand Cards:
 NIEMALS farbige Borders
 ```
 
-### 3. border-radius IMMER
+### 4. border-radius IMMER
 ```
 ALLE Cards: border-radius: 8px
 ALLE Buttons: border-radius: 28px
@@ -371,13 +428,13 @@ Badges: border-radius: 4px
 NIEMALS eckige Ecken (border-radius: 0)
 ```
 
-### 4. KEINE box-shadow
+### 5. KEINE box-shadow
 ```
 VERBOTEN: box-shadow
 ERLAUBT: border (nur bei weißen Cards)
 ```
 
-### 5. KEINE Gradients/Verläufe
+### 6. KEINE Gradients/Verläufe
 ```
 VERBOTEN:
   ❌ linear-gradient
@@ -388,7 +445,7 @@ ERLAUBT:
   ✅ Solid Colors
 ```
 
-### 6. Ampel-System (3 Zustände)
+### 7. Ampel-System (3 Zustände)
 ```
 ↑ Erfolg & Anstieg         → #00D9B1 (Grün)
 → Neutral & Gleichbleibend → #F2CA26 (Gelb)
@@ -410,7 +467,7 @@ KRITISCH:
 </div>
 ```
 
-### 7. Charts verwenden EIGENE Farben
+### 8. Charts verwenden EIGENE Farben
 ```
 FÜR CHARTS (Chart.js):
   ✅ chartColors.green600: '#00D9B1'
@@ -464,7 +521,7 @@ new Chart(document.getElementById('myChart'), {
 </script>
 ```
 
-### 8. Label-Hierarchie
+### 9. Label-Hierarchie
 ```
 Weiße/Sand Cards:
   → Ampel-Labels erlaubt (↑/→/↓)
@@ -486,18 +543,19 @@ Charcoal Card:
 
 ---
 
-## Häufige Fehler (Top 10)
+## Häufige Fehler (Top 11)
 
 1. ❌ Weiße Schrift auf Brand-Farben → ✅ Immer Charcoal (#333)
-2. ❌ box-shadow verwenden → ✅ border (nur weiße Cards)
-3. ❌ Eckige Ecken (border-radius: 0) → ✅ border-radius: 8px/28px
-4. ❌ Border auf farbigen Cards → ✅ border: none
-5. ❌ Gradients (linear-gradient) → ✅ Solid Colors
-6. ❌ Brand-Farben in Charts → ✅ chartColors verwenden
-7. ❌ Ampel-Labels auf farbigen Cards → ✅ Nur weiße Labels auf farbigen Cards
-8. ❌ ↑ mit Rot, ↓ mit Grün → ✅ ↑=Grün, ↓=Rot, →=Gelb
-9. ❌ Card-Padding <30px → ✅ Minimum 30px
-10. ❌ Button Size Medium → ✅ Nur Large (48px)
+2. ❌ Fließtext mit 14px oder 15px → ✅ Immer 17px (var(--font-size-base))
+3. ❌ box-shadow verwenden → ✅ border (nur weiße Cards)
+4. ❌ Eckige Ecken (border-radius: 0) → ✅ border-radius: 8px/28px
+5. ❌ Border auf farbigen Cards → ✅ border: none
+6. ❌ Gradients (linear-gradient) → ✅ Solid Colors
+7. ❌ Brand-Farben in Charts → ✅ chartColors verwenden
+8. ❌ Ampel-Labels auf farbigen Cards → ✅ Nur weiße Labels auf farbigen Cards
+9. ❌ ↑ mit Rot, ↓ mit Grün → ✅ ↑=Grün, ↓=Rot, →=Gelb
+10. ❌ Card-Padding <30px → ✅ Minimum 30px
+11. ❌ Button Size Medium → ✅ Nur Large (48px)
 
 ---
 
@@ -517,10 +575,21 @@ Charcoal Card:
 
 ---
 
+## Quick-Reference: Typografie
+
+**Fließtext:** 17px (var(--font-size-base))
+**Überschriften:** h1=34px, h2=26px, h3=20px
+**Labels:** 12px (var(--font-size-xs))
+**Hilfstext:** 14px (var(--font-size-sm))
+**Buttons:** 16px (explizit)
+
+---
+
 ## Checkliste vor Fertigstellung
 
 - [ ] Font: "Make it sans"
 - [ ] Text: Charcoal (#333) - außer auf Charcoal-BG
+- [ ] Fließtext: 17px (NICHT 14px oder 15px!)
 - [ ] Farbige Cards: border: none
 - [ ] Weiße Cards: border: 2px solid gray-medium
 - [ ] ALLE Cards: border-radius: 8px
