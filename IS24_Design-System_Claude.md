@@ -1,4 +1,4 @@
-# ImmoScout24 Design-System - Basis-Prompt
+# ImmoScout24 Design-System - Basis-Prompt 2.0
 
 ## ⚠️ ABSOLUTE PRIORITÄT
 
