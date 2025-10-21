@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IS24 Design-System - Visuelle Referenz</title>
+    <title>ImmoScout24 Design-System</title>
     <style>
         :root {
             /* Brand Colours */
@@ -21,7 +21,7 @@
             /* Neutral */
             --color-gray-medium: #E0E0E0;
             
-            /* Semantic Colors */
+            /* Semantic Colors (Ampel-System) */
             --color-success: #00D9B1;
             --color-warning: #F2CA26;
             --color-danger: #E74B3C;
@@ -51,7 +51,7 @@
             --spacing-xxl: 60px;
             
             /* Layout */
-            --container-max-width: 1400px;
+            --container-max-width: 1200px;
             --border-width: 2px;
             --border-radius: 8px;
         }
@@ -64,7 +64,7 @@
         
         body {
             font-family: var(--font-family);
-            font-size: 17px;
+            font-size: var(--font-size-base);
             color: var(--color-charcoal);
             background-color: var(--color-sand);
             line-height: 1.6;
@@ -73,147 +73,156 @@
         .container {
             max-width: var(--container-max-width);
             margin: 0 auto;
-            padding: 20px;
+            padding: var(--spacing-lg);
         }
-        
-        h1 {
+
+        header {
+            background-color: var(--color-charcoal);
+            color: var(--color-white);
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+
+        header h1 {
             font-size: var(--font-size-xxxl);
-            margin-bottom: 15px;
-            color: var(--color-charcoal);
+            margin-bottom: var(--spacing-sm);
         }
-        
-        h2 {
+
+        header p {
+            font-size: var(--font-size-base);
+            opacity: 0.9;
+        }
+
+        .section {
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .section-title {
             font-size: var(--font-size-xxl);
-            margin: 30px 0 15px 0;
-            color: var(--color-charcoal);
-            border-bottom: 2px solid var(--color-gray-medium);
-            padding-bottom: 8px;
-        }
-        
-        h3 {
-            font-size: var(--font-size-xl);
-            margin: 20px 0 10px 0;
+            margin-bottom: var(--spacing-lg);
             color: var(--color-charcoal);
         }
-        
-        .header {
-            margin-bottom: 40px;
-        }
-        
-        .header h1 {
-            font-size: 34px;
-            margin-bottom: 10px;
+
+        .section-subtitle {
+            font-size: var(--font-size-sm);
             color: var(--color-charcoal);
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.8;
         }
-        
-        .header p {
-            font-size: 16px;
-            color: var(--color-charcoal);
-        }
-        
-        /* Grid System */
-        .grid-2 {
+
+        /* Grid Layouts */
+        .two-column-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
         }
-        
-        .grid-3 {
+
+        .three-column-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
         }
-        
-        .grid-4 {
+
+        .four-column-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
         }
-        
-        @media (max-width: 1024px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (max-width: 768px) {
-            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-        }
-        
+
         /* Cards */
         .card {
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            transition: transform 0.2s;
+        }
+
+        .card-white {
             background-color: var(--color-white);
             border: 2px solid var(--color-gray-medium);
-            border-radius: 8px;
-            padding: 20px;
             color: var(--color-charcoal);
         }
-        
+
         .card-primary {
             background-color: var(--color-teal);
             color: var(--color-charcoal);
             border: none;
-            border-radius: 8px;
-            padding: 20px;
         }
-        
+
         .card-highlight {
             background-color: var(--color-yellow);
             color: var(--color-charcoal);
             border: none;
-            border-radius: 8px;
-            padding: 20px;
         }
-        
+
         .card-accent {
             background-color: var(--color-orange);
             color: var(--color-charcoal);
             border: none;
-            border-radius: 8px;
-            padding: 20px;
         }
-        
+
         .card-info {
             background-color: var(--color-blue);
             color: var(--color-charcoal);
             border: none;
-            border-radius: 8px;
-            padding: 20px;
         }
-        
+
         .card-premium {
             background-color: var(--color-purple);
             color: var(--color-charcoal);
             border: none;
-            border-radius: 8px;
-            padding: 20px;
         }
-        
+
         .card-charcoal {
             background-color: var(--color-charcoal);
             color: var(--color-white);
             border: none;
-            border-radius: 8px;
-            padding: 20px;
         }
-        
-        .card-headline {
+
+        .card h3 {
             font-size: var(--font-size-xl);
-            font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: var(--spacing-sm);
         }
-        
-        .card-title {
+
+        .card p {
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+        }
+
+        /* Labels */
+        .label {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
             font-size: var(--font-size-xs);
             font-weight: 600;
-            margin-bottom: 8px;
-            opacity: 0.7;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            margin-top: var(--spacing-sm);
         }
-        
-        .card-content {
-            font-size: var(--font-size-sm);
+
+        .label-success {
+            background-color: var(--color-success);
+            color: var(--color-charcoal);
         }
-        
+
+        .label-warning {
+            background-color: var(--color-warning);
+            color: var(--color-charcoal);
+        }
+
+        .label-danger {
+            background-color: var(--color-danger);
+            color: var(--color-charcoal);
+        }
+
+        .label-white {
+            background-color: var(--color-white);
+            color: var(--color-charcoal);
+        }
+
         /* Buttons */
         .btn {
             height: 48px;
@@ -224,33 +233,32 @@
             font-family: var(--font-family);
             cursor: pointer;
             transition: opacity 0.2s;
+            border: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         .btn:hover {
             opacity: 0.9;
         }
-        
+
         .btn-primary {
             background-color: var(--color-teal);
             color: var(--color-charcoal);
-            border: none;
         }
-        
+
         .btn-secondary {
             background-color: var(--color-charcoal);
             color: var(--color-white);
-            border: none;
         }
-        
+
         .btn-outlined {
             background-color: transparent;
             color: var(--color-charcoal);
             border: 2px solid var(--color-charcoal);
         }
-        
+
         .btn-link {
             background: none;
             border: none;
@@ -259,574 +267,639 @@
             padding: 0;
             height: auto;
         }
-        
-        /* Ampel-Badges */
-        .badge {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-top: 8px;
-        }
-        
-        .badge-success {
-            background-color: var(--color-success);
-            color: var(--color-charcoal);
-        }
-        
-        .badge-warning {
-            background-color: var(--color-warning);
-            color: var(--color-charcoal);
-        }
-        
-        .badge-danger {
-            background-color: var(--color-danger);
-            color: var(--color-white);
-        }
-        
+
         /* Color Swatches */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
         .color-swatch {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 8px 0;
+            text-align: center;
         }
-        
+
         .color-box {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
+            height: 80px;
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-xs);
             border: 2px solid var(--color-gray-medium);
         }
-        
-        .color-info {
-            flex: 1;
-        }
-        
+
         .color-name {
-            font-weight: 600;
             font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: 4px;
         }
-        
+
         .color-code {
-            font-family: monospace;
             font-size: var(--font-size-xs);
-            color: #666;
+            opacity: 0.7;
         }
-        
-        /* Info Boxes */
-        .info-box {
-            background-color: var(--color-blue);
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .warning-box {
-            background-color: var(--color-yellow);
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .danger-box {
-            background-color: var(--color-danger);
-            color: var(--color-white);
-            border-radius: 8px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-        
-        .info-box h4,
-        .warning-box h4,
-        .danger-box h4 {
-            margin-bottom: 8px;
-            font-size: var(--font-size-base);
-        }
-        
-        .info-box ul,
-        .warning-box ul,
-        .danger-box ul {
-            list-style-position: inside;
-            margin-left: 0;
-        }
-        
-        .info-box li,
-        .warning-box li,
-        .danger-box li {
-            margin: 5px 0;
-        }
-        
-        /* KPI Demo */
-        .kpi-value {
-            font-size: var(--font-size-xxl);
-            font-weight: 700;
-            margin: 8px 0;
-        }
-        
-        .button-demo {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        
-        /* Typography Examples */
-        .type-example {
-            background: var(--color-white);
+
+        /* Typography Samples */
+        .typo-sample {
+            background-color: var(--color-white);
             border: 2px solid var(--color-gray-medium);
-            border-radius: 8px;
-            padding: 15px;
-            margin: 8px 0;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
         }
-        
-        .type-label {
-            font-size: 11px;
-            color: #999;
+
+        .typo-sample h1 {
+            font-size: var(--font-size-xxxl);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .typo-sample h2 {
+            font-size: var(--font-size-xxl);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .typo-sample h3 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .typo-info {
+            font-size: var(--font-size-xs);
+            color: var(--color-charcoal);
+            opacity: 0.6;
+            margin-top: var(--spacing-xs);
+        }
+
+        /* Info Box */
+        .info-box {
+            background-color: var(--color-white);
+            border: 2px solid var(--color-gray-medium);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .info-box.warning {
+            border-color: var(--color-gray-medium);
+            background-color: var(--color-white);
+        }
+
+        .info-box h4 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* KPI Demo */
+        .kpi-demo {
+            background-color: var(--color-white);
+            border: 2px solid var(--color-gray-medium);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+        }
+
+        .kpi-label {
+            font-size: var(--font-size-xs);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-bottom: 5px;
+            margin-bottom: var(--spacing-xs);
         }
-        
-        /* Spacing Examples */
-        .spacing-demo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 8px 0;
+
+        .kpi-value {
+            font-size: var(--font-size-xxxl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
         }
-        
-        .spacing-box {
-            background: var(--color-gray-medium);
-            border-radius: 4px;
+
+        @media (max-width: 768px) {
+            .two-column-grid,
+            .three-column-grid,
+            .four-column-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        
-        .spacing-label {
-            font-family: monospace;
-            font-size: 12px;
-            font-weight: 600;
+
+        footer {
+            text-align: center;
+            padding: var(--spacing-xl);
+            margin-top: var(--spacing-xxl);
+            font-size: var(--font-size-sm);
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>ImmoScout24 Design-System</h1>
+        <header>
+            <h1>ImmoScout24 Design-System für Claude • Version 2.0</h1>
             <p>Visuelle Referenz für alle Komponenten</p>
-        </div>
-        
-        <!-- Typografie -->
-        <section>
-            <h2>Typografie</h2>
+        </header>
+
+        <!-- TYPOGRAFIE SECTION -->
+        <section class="section">
+            <h2 class="section-title">Typografie</h2>
+            <p class="section-subtitle">"Make it sans", sans-serif • Line-Height: 1.6 • Text-Color: #333333 (Charcoal)</p>
             
-            <p style="margin-bottom: 20px;"><strong>"Make it sans", sans-serif</strong> • Line-Height: 1.6 • Text-Color: #333333 (Charcoal)</p>
-            
-            <h3>Font-Sizes</h3>
-            <div style="background: white; border: 2px solid #E0E0E0; border-radius: 8px; padding: 20px;">
-                <div style="margin: 10px 0; padding-bottom: 10px; border-bottom: 1px solid #E0E0E0;">
-                    <span style="font-size: 11px; color: #999; font-weight: 600;">XXXL - 34px</span>
-                    <div style="font-size: 34px; font-weight: 700;">Hauptüberschrift</div>
-                </div>
-                <div style="margin: 10px 0; padding-bottom: 10px; border-bottom: 1px solid #E0E0E0;">
-                    <span style="font-size: 11px; color: #999; font-weight: 600;">XXL - 26px</span>
-                    <div style="font-size: 26px; font-weight: 700;">Section Headline</div>
-                </div>
-                <div style="margin: 10px 0; padding-bottom: 10px; border-bottom: 1px solid #E0E0E0;">
-                    <span style="font-size: 11px; color: #999; font-weight: 600;">XL - 20px</span>
-                    <div style="font-size: 20px; font-weight: 600;">Card Headline</div>
-                </div>
-                <div style="margin: 10px 0; padding-bottom: 10px; border-bottom: 1px solid #E0E0E0;">
-                    <span style="font-size: 11px; color: #999; font-weight: 600;">BASE - 17px</span>
-                    <div style="font-size: 17px;">Standard Text (Body)</div>
-                </div>
-                <div style="margin: 10px 0; padding-bottom: 10px; border-bottom: 1px solid #E0E0E0;">
-                    <span style="font-size: 11px; color: #999; font-weight: 600;">SM - 14px</span>
-                    <div style="font-size: 14px;">Small Text</div>
-                </div>
-                <div style="margin: 10px 0;">
-                    <span style="font-size: 11px; color: #999; font-weight: 600;">XS - 12px</span>
-                    <div style="font-size: 12px;">Labels, Captions</div>
-                </div>
+            <div class="typo-sample">
+                <h1>Überschrift H1</h1>
+                <p class="typo-info">34px (var(--font-size-xxxl)) • font-weight: normal</p>
+            </div>
+
+            <div class="typo-sample">
+                <h2>Überschrift H2</h2>
+                <p class="typo-info">26px (var(--font-size-xxl)) • font-weight: normal</p>
+            </div>
+
+            <div class="typo-sample">
+                <h3>Überschrift H3</h3>
+                <p class="typo-info">20px (var(--font-size-xl)) • font-weight: normal</p>
+            </div>
+
+            <div class="typo-sample">
+                <p>Dies ist ein Fließtext mit 17px Schriftgröße. ALLE normalen Absätze, Beschreibungen und längeren Texte verwenden diese Größe. Dies ist die wichtigste Regel für Lesbarkeit und Markenkonsistenz.</p>
+                <p class="typo-info">17px (var(--font-size-base)) • STANDARD für ALLE Absätze und Fließtext</p>
+            </div>
+
+            <div class="info-box warning">
+                <h4>⚠️ KRITISCH: Fließtext ist IMMER 17px</h4>
+                <p><strong>VERBOTEN:</strong> Fließtext mit 14px oder 15px</p>
+                <p><strong>NUR kleiner für:</strong> Labels (12px), Hilfstext/Captions (14px), Button-Text (16px)</p>
             </div>
         </section>
-        
-        <!-- Spacing -->
-        <section>
-            <h2>Spacing-System</h2>
+
+        <!-- FARBEN SECTION -->
+        <section class="section">
+            <h2 class="section-title">Farbsystem</h2>
             
-            <div class="grid-3">
-                <div class="spacing-demo">
-                    <div class="spacing-box" style="width: 8px; height: 40px;"></div>
-                    <div>
-                        <div class="spacing-label">xs: 8px</div>
-                        <div style="font-size: 12px; color: #666;">Minimal</div>
-                    </div>
+            <h3 style="font-size: 20px; margin-bottom: 20px;">Brand-Farben (UI-Elemente)</h3>
+            <p class="section-subtitle">Für Cards, Buttons und UI-Komponenten</p>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #3DF5DC;"></div>
+                    <div class="color-name">Teal</div>
+                    <div class="color-code">#3DF5DC</div>
                 </div>
-                <div class="spacing-demo">
-                    <div class="spacing-box" style="width: 12px; height: 40px;"></div>
-                    <div>
-                        <div class="spacing-label">sm: 12px</div>
-                        <div style="font-size: 12px; color: #666;">Klein</div>
-                    </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #FF9626;"></div>
+                    <div class="color-name">Orange</div>
+                    <div class="color-code">#FF9626</div>
                 </div>
-                <div class="spacing-demo">
-                    <div class="spacing-box" style="width: 20px; height: 40px;"></div>
-                    <div>
-                        <div class="spacing-label">md: 20px</div>
-                        <div style="font-size: 12px; color: #666;">Medium</div>
-                    </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #EFF933;"></div>
+                    <div class="color-name">Yellow</div>
+                    <div class="color-code">#EFF933</div>
                 </div>
-                <div class="spacing-demo">
-                    <div class="spacing-box" style="width: 30px; height: 40px;"></div>
-                    <div>
-                        <div class="spacing-label">lg: 30px</div>
-                        <div style="font-size: 12px; color: #666;">Large (Card Padding)</div>
-                    </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #24E3FF;"></div>
+                    <div class="color-name">Blue</div>
+                    <div class="color-code">#24E3FF</div>
                 </div>
-                <div class="spacing-demo">
-                    <div class="spacing-box" style="width: 40px; height: 40px;"></div>
-                    <div>
-                        <div class="spacing-label">xl: 40px</div>
-                        <div style="font-size: 12px; color: #666;">Extra Large</div>
-                    </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #D5AAFF;"></div>
+                    <div class="color-name">Purple</div>
+                    <div class="color-code">#D5AAFF</div>
                 </div>
-                <div class="spacing-demo">
-                    <div class="spacing-box" style="width: 60px; height: 40px;"></div>
-                    <div>
-                        <div class="spacing-label">xxl: 60px</div>
-                        <div style="font-size: 12px; color: #666;">Sections</div>
-                    </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #333333;"></div>
+                    <div class="color-name">Charcoal</div>
+                    <div class="color-code">#333333</div>
                 </div>
+            </div>
+
+            <h3 style="font-size: 20px; margin: 30px 0 20px 0;">Neutral-Farben</h3>
+            <p class="section-subtitle">Für Hintergründe, Borders und neutrale Elemente</p>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #FFFFFF; border: 2px solid #E0E0E0;"></div>
+                    <div class="color-name">White</div>
+                    <div class="color-code">#FFFFFF</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #FBF8F6;"></div>
+                    <div class="color-name">Sand</div>
+                    <div class="color-code">#FBF8F6</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #E0E0E0;"></div>
+                    <div class="color-name">Gray Medium</div>
+                    <div class="color-code">#E0E0E0</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #333333;"></div>
+                    <div class="color-name">Charcoal</div>
+                    <div class="color-code">#333333</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 20px; margin: 30px 0 20px 0;">Chart-Farben (Datenvisualisierung)</h3>
+            <p class="section-subtitle">NUR für Charts - NIEMALS Brand-Farben in Charts verwenden!</p>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #00D9B1;"></div>
+                    <div class="color-name">Grün</div>
+                    <div class="color-code">#00D9B1</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #3598DB;"></div>
+                    <div class="color-name">Blau</div>
+                    <div class="color-code">#3598DB</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #E67E23;"></div>
+                    <div class="color-name">Orange</div>
+                    <div class="color-code">#E67E23</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #F2CA26;"></div>
+                    <div class="color-name">Gelb</div>
+                    <div class="color-code">#F2CA26</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="color-box" style="background-color: #E74B3C;"></div>
+                    <div class="color-name">Rot</div>
+                    <div class="color-code">#E74B3C</div>
+                </div>
+            </div>
+
+            <div class="info-box warning">
+                <h4>⚠️ NIEMALS Brand-Farben in Charts!</h4>
+                <p><strong>Brand-Farben (Teal #3DF5DC, Orange #FF9626, etc.):</strong> Nur für UI-Elemente</p>
+                <p><strong>Chart-Farben (#00D9B1, #3598DB, etc.):</strong> Nur für Datenvisualisierung</p>
             </div>
         </section>
-        
-        <!-- Grid-System -->
-        <section>
-            <h2>Grid-System</h2>
+
+        <!-- AMPEL-SYSTEM SECTION -->
+        <section class="section">
+            <h2 class="section-title">Ampel-System (Status-Indikatoren)</h2>
+            <p class="section-subtitle">Nur auf weißem/Sand-Hintergrund! NIEMALS auf farbigen Cards!</p>
             
-            <p style="margin-bottom: 15px;"><strong>Responsive:</strong> @media (max-width: 768px) → Alle Grids werden zu 1 Spalte</p>
-            
-            <h3>Two-Column Grid</h3>
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-title">SPALTE 1</div>
-                    <p>50% Breite • Gap: 15px</p>
+            <div class="three-column-grid">
+                <div class="kpi-demo">
+                    <div class="kpi-label">UMSATZ</div>
+                    <div class="kpi-value">€156K</div>
+                    <span class="label label-success">↑ 8.2%</span>
+                    <p class="typo-info" style="margin-top: 12px;">Erfolg & Anstieg: ↑ Grün #00D9B1</p>
                 </div>
-                <div class="card">
-                    <div class="card-title">SPALTE 2</div>
-                    <p>50% Breite • Gap: 15px</p>
+                
+                <div class="kpi-demo">
+                    <div class="kpi-label">LEADS</div>
+                    <div class="kpi-value">2.4K</div>
+                    <span class="label label-warning">→ 0.0%</span>
+                    <p class="typo-info" style="margin-top: 12px;">Neutral & Gleichbleibend: → Gelb #F2CA26</p>
+                </div>
+                
+                <div class="kpi-demo">
+                    <div class="kpi-label">BOUNCE RATE</div>
+                    <div class="kpi-value">42%</div>
+                    <span class="label label-danger">↓ 3.1%</span>
+                    <p class="typo-info" style="margin-top: 12px;">Misserfolg & Gesunken: ↓ Rot #E74B3C</p>
                 </div>
             </div>
-            
-            <h3>Three-Column Grid</h3>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-title">SPALTE 1</div>
-                    <p>33% Breite</p>
-                </div>
-                <div class="card">
-                    <div class="card-title">SPALTE 2</div>
-                    <p>33% Breite</p>
-                </div>
-                <div class="card">
-                    <div class="card-title">SPALTE 3</div>
-                    <p>33% Breite</p>
-                </div>
+
+            <div class="info-box warning">
+                <h4>⚠️ Ampel-Regeln</h4>
+                <p><strong>NUR auf weißen/Sand Cards:</strong> Cards mit Ampel-Labels (↑/→/↓) MÜSSEN weißen Hintergrund haben</p>
+                <p><strong>VERBOTEN auf farbigen Cards:</strong> Teal, Yellow, Orange, Blue, Purple, Charcoal Cards dürfen KEINE Ampel-Labels haben</p>
+                <p><strong>Niemals verwechseln:</strong> ↑ = Grün, → = Gelb, ↓ = Rot</p>
             </div>
         </section>
-        
-        <!-- Farben -->
-        <section>
-            <h2>Farbsystem</h2>
+
+        <!-- LABEL-HIERARCHIE SECTION -->
+        <section class="section">
+            <h2 class="section-title">Label-Hierarchie</h2>
+            <p class="section-subtitle">Verschiedene Label-Typen für verschiedene Card-Hintergründe</p>
             
-            <div class="grid-3">
-                <!-- Brand Colours -->
+            <div class="two-column-grid">
                 <div>
-                    <h3 style="margin-top: 0;">Brand Colours (UI)</h3>
-                    <div style="background: white; border: 2px solid #E0E0E0; border-radius: 8px; padding: 15px;">
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #3DF5DC;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Teal</div>
-                                <div class="color-code">#3DF5DC</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #FF9626;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Orange</div>
-                                <div class="color-code">#FF9626</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #EFF933;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Yellow</div>
-                                <div class="color-code">#EFF933</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #24E3FF;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Blue</div>
-                                <div class="color-code">#24E3FF</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #D5AAFF;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Purple</div>
-                                <div class="color-code">#D5AAFF</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #333333;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Charcoal</div>
-                                <div class="color-code">#333333</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #FFFFFF; border: 2px solid #E0E0E0;"></div>
-                            <div class="color-info">
-                                <div class="color-name">White</div>
-                                <div class="color-code">#FFFFFF</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #FBF8F6;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Sand</div>
-                                <div class="color-code">#FBF8F6</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #E0E0E0;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Gray Medium</div>
-                                <div class="color-code">#E0E0E0</div>
-                            </div>
-                        </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">Weiße/Sand Cards</h3>
+                    <div class="card card-white">
+                        <h3>Standard Content</h3>
+                        <p>Ampel-Labels erlaubt für Status-Indikatoren</p>
+                        <span class="label label-success">↑ 8.2%</span>
+                        <span class="label label-warning">→ 0.0%</span>
+                        <span class="label label-danger">↓ 3.1%</span>
                     </div>
                 </div>
                 
-                <!-- Chart Colours -->
                 <div>
-                    <h3 style="margin-top: 0;">Chart Colours</h3>
-                    <div style="background: white; border: 2px solid #E0E0E0; border-radius: 8px; padding: 15px;">
-                        <p style="font-size: 12px; color: #E74B3C; font-weight: 600; margin-bottom: 10px;">⚠️ NIEMALS Brand-Farben in Charts!</p>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #00D9B1;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Grün</div>
-                                <div class="color-code">#00D9B1</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #3598DB;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Blau</div>
-                                <div class="color-code">#3598DB</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #E67E23;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Orange</div>
-                                <div class="color-code">#E67E23</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #F2CA26;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Gelb</div>
-                                <div class="color-code">#F2CA26</div>
-                            </div>
-                        </div>
-                        <div class="color-swatch">
-                            <div class="color-box" style="background-color: #E74B3C;"></div>
-                            <div class="color-info">
-                                <div class="color-name">Rot</div>
-                                <div class="color-code">#E74B3C</div>
-                            </div>
-                        </div>
+                    <h3 style="font-size: 20px; margin-bottom: 15px;">Farbige Cards</h3>
+                    <div class="card card-primary">
+                        <h3>Highlight Content</h3>
+                        <p>Nur weiße Labels erlaubt</p>
+                        <span class="label label-white">Wichtig</span>
+                        <span class="label label-white">Neu</span>
                     </div>
                 </div>
-                
-                <!-- Ampel-System -->
-                <div>
-                    <h3 style="margin-top: 0;">Ampel-System</h3>
-                    <div style="background: white; border: 2px solid #E0E0E0; border-radius: 8px; padding: 15px;">
-                        <p style="font-size: 12px; color: #666; margin-bottom: 10px;">Nur auf weißem/Sand-Hintergrund!</p>
-                        <div class="card" style="margin-bottom: 10px; padding: 15px;">
-                            <div style="font-size: 12px; font-weight: 600; margin-bottom: 5px;">Erfolg / Anstieg</div>
-                            <span class="badge badge-success">↑ 8.2%</span>
-                            <div class="color-code" style="margin-top: 5px;">#00D9B1</div>
+            </div>
+
+            <div class="info-box">
+                <h4>Label-Regeln im Überblick</h4>
+                <p><strong>Weiße/Sand Cards:</strong> Ampel-Labels (↑/→/↓) mit semantischen Farben erlaubt</p>
+                <p><strong>Farbige Cards (Teal, Yellow, Orange, Blue, Purple):</strong> Nur weiße Labels (background: white, color: #333)</p>
+                <p><strong>Charcoal Card:</strong> Nur weiße Labels (background: white, color: #333)</p>
+            </div>
+        </section>
+
+        <!-- GRID-SYSTEM SECTION -->
+        <section class="section">
+            <h2 class="section-title">Grid-System</h2>
+            <p class="section-subtitle">Responsive: @media (max-width: 768px) → Alle Grids werden zu 1 Spalte</p>
+            
+            <h3 style="font-size: 20px; margin-bottom: 15px;">Two-Column Grid</h3>
+            <div class="two-column-grid">
+                <div class="card card-white">
+                    <h3>50% Breite</h3>
+                    <p>Gap: 30px</p>
+                </div>
+                <div class="card card-white">
+                    <h3>50% Breite</h3>
+                    <p>Gap: 30px</p>
+                </div>
+            </div>
+
+            <h3 style="font-size: 20px; margin-bottom: 15px;">Three-Column Grid</h3>
+            <div class="three-column-grid">
+                <div class="card card-white">
+                    <h3>33% Breite</h3>
+                </div>
+                <div class="card card-white">
+                    <h3>33% Breite</h3>
+                </div>
+                <div class="card card-white">
+                    <h3>33% Breite</h3>
+                </div>
+            </div>
+
+            <h3 style="font-size: 20px; margin-bottom: 15px;">KPI-Grid (Auto-Fit)</h3>
+            <p class="section-subtitle">Grid-Template: repeat(auto-fit, minmax(200px, 1fr)) - Passt sich automatisch an verfügbaren Platz an</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin-bottom: 30px;">
+                <div class="kpi-demo">
+                    <div class="kpi-label">USERS</div>
+                    <div class="kpi-value">12.5K</div>
+                    <span class="label label-success">↑ 12%</span>
+                </div>
+                <div class="kpi-demo">
+                    <div class="kpi-label">REVENUE</div>
+                    <div class="kpi-value">€245K</div>
+                    <span class="label label-success">↑ 8%</span>
+                </div>
+                <div class="kpi-demo">
+                    <div class="kpi-label">CONVERSION</div>
+                    <div class="kpi-value">3.2%</div>
+                    <span class="label label-warning">→ 0%</span>
+                </div>
+                <div class="kpi-demo">
+                    <div class="kpi-label">BOUNCE</div>
+                    <div class="kpi-value">42%</div>
+                    <span class="label label-danger">↓ 5%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPACING SECTION -->
+        <section class="section">
+            <h2 class="section-title">Spacing-System</h2>
+            <p class="section-subtitle">Konsistente Abstände für alle Komponenten</p>
+            
+            <div class="info-box">
+                <div style="margin-bottom: 20px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 8px; height: 30px; background-color: var(--color-teal); margin-right: 15px;"></div>
+                        <div>
+                            <strong>--spacing-xs: 8px</strong>
+                            <p style="font-size: 14px; opacity: 0.7;">Minimaler Abstand für eng verbundene Elemente</p>
                         </div>
-                        <div class="card" style="margin-bottom: 10px; padding: 15px;">
-                            <div style="font-size: 12px; font-weight: 600; margin-bottom: 5px;">Neutral / Gleichbleibend</div>
-                            <span class="badge badge-warning">→ 0%</span>
-                            <div class="color-code" style="margin-top: 5px;">#F2CA26</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 12px; height: 30px; background-color: var(--color-teal); margin-right: 15px;"></div>
+                        <div>
+                            <strong>--spacing-sm: 12px</strong>
+                            <p style="font-size: 14px; opacity: 0.7;">Kleine Abstände innerhalb von Komponenten</p>
                         </div>
-                        <div class="card" style="margin-bottom: 0; padding: 15px;">
-                            <div style="font-size: 12px; font-weight: 600; margin-bottom: 5px;">Misserfolg / Gesunken</div>
-                            <span class="badge badge-danger">↓ 3.5%</span>
-                            <div class="color-code" style="margin-top: 5px;">#E74B3C</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 20px; height: 30px; background-color: var(--color-teal); margin-right: 15px;"></div>
+                        <div>
+                            <strong>--spacing-md: 20px</strong>
+                            <p style="font-size: 14px; opacity: 0.7;">Mittlere Abstände zwischen Elementen</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 30px; height: 30px; background-color: var(--color-teal); margin-right: 15px;"></div>
+                        <div>
+                            <strong>--spacing-lg: 30px</strong>
+                            <p style="font-size: 14px; opacity: 0.7;">Standard-Padding für Cards und größere Abstände</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="width: 40px; height: 30px; background-color: var(--color-teal); margin-right: 15px;"></div>
+                        <div>
+                            <strong>--spacing-xl: 40px</strong>
+                            <p style="font-size: 14px; opacity: 0.7;">Große Abstände zwischen Sections</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 60px; height: 30px; background-color: var(--color-teal); margin-right: 15px;"></div>
+                        <div>
+                            <strong>--spacing-xxl: 60px</strong>
+                            <p style="font-size: 14px; opacity: 0.7;">Maximaler Abstand zwischen Haupt-Sections</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Cards -->
-        <section>
-            <h2>Card-Varianten</h2>
+
+        <!-- CARDS SECTION -->
+        <section class="section">
+            <h2 class="section-title">Card-Varianten</h2>
+            <p class="section-subtitle">Border-Logik: Farbige Cards = border: none • Weiße/Sand Cards = border: 2px solid gray-medium • Alle Cards: border-radius: 8px, padding: 30px</p>
             
-            <p style="margin-bottom: 15px;">
-                <strong>Border-Logik:</strong> Farbige Cards = border: none • Weiße/Sand Cards = border: 2px solid gray-medium • Alle Cards: border-radius: 8px, padding: 30px
-            </p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-headline">Standard Card</div>
-                    <div class="card-content">
-                        Weißer Hintergrund mit Border. Für Standard-Content und Cards MIT Ampel-Labels.
-                    </div>
-                    <span class="badge badge-success">↑ 12%</span>
-                    <span class="badge badge-warning">→ 0%</span>
-                    <span class="badge badge-danger">↓ 3.5%</span>
+            <div class="three-column-grid">
+                <div class="card card-white">
+                    <h3>Standard Card</h3>
+                    <p>Standard-Content und Cards MIT Ampel-Labels</p>
+                    <span class="label label-success">↑ 5%</span>
                 </div>
                 
-                <div class="card-primary">
-                    <div class="card-headline">Primary Card (Teal)</div>
-                    <div class="card-content">
-                        Hero-Content, wichtige Highlights. Text bleibt Charcoal!
-                    </div>
-                    <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-top: 8px; background: white; color: #333;">Label (nur Weiß erlaubt)</span>
+                <div class="card card-primary">
+                    <h3>Primary Card</h3>
+                    <p>Hero-Content, wichtige Highlights</p>
+                    <span class="label label-white">Teal</span>
                 </div>
                 
-                <div class="card-highlight">
-                    <div class="card-headline">Highlight Card (Yellow)</div>
-                    <div class="card-content">
-                        KPIs ohne Labels, Highlights. Text bleibt Charcoal!
-                    </div>
-                    <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-top: 8px; background: white; color: #333;">Label (nur Weiß erlaubt)</span>
+                <div class="card card-highlight">
+                    <h3>Highlight Card</h3>
+                    <p>KPIs ohne Labels, Highlights</p>
+                    <span class="label label-white">Yellow</span>
+                </div>
+            </div>
+
+            <div class="three-column-grid">
+                <div class="card card-accent">
+                    <h3>Accent Card</h3>
+                    <p>Akzent-Content, sekundäre Highlights</p>
+                    <span class="label label-white">Orange</span>
                 </div>
                 
-                <div class="card-accent">
-                    <div class="card-headline">Accent Card (Orange)</div>
-                    <div class="card-content">
-                        Akzent-Content, sekundäre Highlights. Text bleibt Charcoal!
-                    </div>
-                    <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-top: 8px; background: white; color: #333;">Label (nur Weiß erlaubt)</span>
+                <div class="card card-info">
+                    <h3>Info Card</h3>
+                    <p>Informations-Content, Hinweise</p>
+                    <span class="label label-white">Blue</span>
                 </div>
                 
-                <div class="card-info">
-                    <div class="card-headline">Info Card (Blue)</div>
-                    <div class="card-content">
-                        Informations-Content, Hinweise. Text bleibt Charcoal!
-                    </div>
-                    <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-top: 8px; background: white; color: #333;">Label (nur Weiß erlaubt)</span>
+                <div class="card card-premium">
+                    <h3>Premium Card</h3>
+                    <p>Premium-Features, besondere Inhalte</p>
+                    <span class="label label-white">Purple</span>
                 </div>
-                
-                <div class="card-premium">
-                    <div class="card-headline">Premium Card (Purple)</div>
-                    <div class="card-content">
-                        Premium-Features, besondere Inhalte. Text bleibt Charcoal!
-                    </div>
-                    <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-top: 8px; background: white; color: #333;">Label (nur Weiß erlaubt)</span>
-                </div>
-                
-                <div class="card-charcoal">
-                    <div class="card-headline">Charcoal Card</div>
-                    <div class="card-content">
-                        EINZIGE Ausnahme: Weiße Schrift auf Charcoal-Hintergrund erlaubt!
-                    </div>
-                    <span style="display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-top: 8px; background: white; color: #333;">Label Weiß</span>
+            </div>
+
+            <div class="two-column-grid">
+                <div class="card card-charcoal">
+                    <h3>Charcoal Card</h3>
+                    <p>EINZIGE Ausnahme: Weiße Schrift erlaubt!</p>
+                    <span class="label label-white">Dark</span>
                 </div>
             </div>
         </section>
-        
-        <!-- Buttons -->
-        <section>
-            <h2>Buttons</h2>
+
+        <!-- BADGES & BORDER-RADIUS SECTION -->
+        <section class="section">
+            <h2 class="section-title">Badges & Border-Radius</h2>
+            <p class="section-subtitle">Verschiedene Anwendungen von abgerundeten Ecken</p>
             
-            <p style="margin-bottom: 15px;">
-                <strong>Spezifikationen:</strong> Nur Large (48px Höhe) • Font: 16px, font-weight: 600 • Padding: 0 24px • Border-Radius: 28px (vollständig abgerundet)
-            </p>
+            <div class="info-box">
+                <h4>Border-Radius Standards</h4>
+                <div style="margin-top: 20px;">
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                        <div style="background-color: var(--color-teal); padding: 20px 30px; border-radius: 8px; min-width: 150px; text-align: center;">
+                            <strong>Cards: 8px</strong>
+                        </div>
+                        <p>Alle Cards verwenden border-radius: 8px</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 20px;">
+                        <div style="background-color: var(--color-orange); padding: 8px 16px; border-radius: 4px; min-width: 150px; text-align: center;">
+                            <strong>Badges: 4px</strong>
+                        </div>
+                        <p>Labels und Badges verwenden border-radius: 4px</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <button class="btn btn-primary" style="min-width: 150px;">Buttons: 28px</button>
+                        <p>Buttons verwenden border-radius: 28px (vollständig abgerundet)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 20px; margin: 30px 0 20px 0;">Badge-Beispiele</h3>
+            <div class="two-column-grid">
+                <div class="card card-white">
+                    <h3>Status Badges</h3>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px;">
+                        <span class="label label-success">Aktiv</span>
+                        <span class="label label-warning">Ausstehend</span>
+                        <span class="label label-danger">Inaktiv</span>
+                    </div>
+                </div>
+                <div class="card card-primary">
+                    <h3>Badges auf farbigen Cards</h3>
+                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px;">
+                        <span class="label label-white">Neu</span>
+                        <span class="label label-white">Premium</span>
+                        <span class="label label-white">Top</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box warning">
+                <h4>⚠️ KRITISCH: Border-Radius NIEMALS 0</h4>
+                <p><strong>VERBOTEN:</strong> Eckige Ecken (border-radius: 0)</p>
+                <p><strong>IMMER:</strong> Abgerundete Ecken verwenden (8px für Cards, 4px für Badges, 28px für Buttons)</p>
+            </div>
+        </section>
+
+        <!-- BUTTONS SECTION -->
+        <section class="section">
+            <h2 class="section-title">Buttons</h2>
+            <p class="section-subtitle">Spezifikationen: Nur Large (48px Höhe) • Font: 16px, font-weight: 600 • Padding: 0 24px • Border-Radius: 28px (vollständig abgerundet)</p>
             
-            <div style="margin: 20px 0;">
-                <button class="btn btn-primary">Primary (Teal)</button>
-                <button class="btn btn-secondary">Secondary (Charcoal)</button>
-                <button class="btn btn-outlined">Outlined</button>
+            <div class="four-column-grid">
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+                <button class="btn btn-outlined">Outlined Button</button>
                 <button class="btn btn-link">Text Link</button>
             </div>
         </section>
-        
-        <!-- Kern-Regeln -->
-        <section>
-            <h2>🚨 KERN-REGELN (KRITISCH)</h2>
+
+        <!-- VERBOTE SECTION -->
+        <section class="section">
+            <h2 class="section-title">❌ Verbote - Das darf NIEMALS verwendet werden</h2>
+            <p class="section-subtitle">Diese Design-Fehler müssen unbedingt vermieden werden</p>
             
-            <div class="grid-2">
-                <div class="danger-box">
-                    <h4>❌ NIEMALS</h4>
-                    <ul>
-                        <li>box-shadow verwenden</li>
-                        <li>linear-gradient oder radial-gradient</li>
-                        <li>Eckige Ecken (border-radius: 0)</li>
-                        <li>Border auf farbigen Cards</li>
-                        <li>Weiße Schrift auf Brand-Farben (außer Charcoal-BG)</li>
-                        <li>Brand-Farben in Charts verwenden</li>
-                        <li>Ampel-Labels auf farbigen Cards</li>
-                        <li>Button Size Medium (nur Large!)</li>
-                    </ul>
+            <div class="two-column-grid">
+                <div class="info-box warning">
+                    <h4>❌ Keine box-shadow</h4>
+                    <p>VERBOTEN: box-shadow in jeder Form</p>
+                    <p>ERLAUBT: border (nur bei weißen/Sand Cards)</p>
                 </div>
                 
-                <div class="warning-box">
-                    <h4>✅ IMMER</h4>
-                    <ul>
-                        <li>Text in Charcoal (#333) - außer auf Charcoal-Hintergrund</li>
-                        <li>border-radius: 8px für Cards</li>
-                        <li>border-radius: 28px für Buttons</li>
-                        <li>Farbige Cards ohne Border</li>
-                        <li>Weiße Cards mit Border (2px solid gray-medium)</li>
-                        <li>Minimum 30px Padding in Cards</li>
-                        <li>Chart-Farben für Datenvisualisierung</li>
-                        <li>Ampel-Labels nur auf weißem/Sand-Hintergrund</li>
-                    </ul>
+                <div class="info-box warning">
+                    <h4>❌ Keine Gradients/Verläufe</h4>
+                    <p>VERBOTEN: linear-gradient, radial-gradient</p>
+                    <p>ERLAUBT: Solid Colors (background-color)</p>
                 </div>
             </div>
-        </section>
-        
-        <!-- Checkliste -->
-        <section>
-            <h2>Checkliste vor Fertigstellung</h2>
-            
-            <div class="checklist">
-                <div class="checklist-item">• Font: "Make it sans"</div>
-                <div class="checklist-item">• Text: Charcoal (#333)</div>
-                <div class="checklist-item">• Farbige Cards: border: none</div>
-                <div class="checklist-item">• Weiße Cards: border: 2px solid gray-medium</div>
-                <div class="checklist-item">• ALLE Cards: border-radius: 8px</div>
-                <div class="checklist-item">• ALLE Buttons: border-radius: 28px, height: 48px</div>
-                <div class="checklist-item">• KEINE box-shadow</div>
-                <div class="checklist-item">• KEINE Gradients (linear/radial)</div>
-                <div class="checklist-item">• Charts: chartColors (NICHT Brand-Farben)</div>
-                <div class="checklist-item">• Ampel-Labels (↑/→/↓): nur auf Weiß/Sand</div>
-                <div class="checklist-item">• Ampel-Logik: ↑=Grün, →=Gelb, ↓=Rot</div>
-                <div class="checklist-item">• Farbige Cards: nur weiße Labels</div>
-                <div class="checklist-item">• Cards mit Ampel-Labels: weiß + border</div>
-                <div class="checklist-item">• Minimum 30px Card-Padding</div>
+
+            <div class="two-column-grid">
+                <div class="info-box warning">
+                    <h4>❌ Keine eckigen Ecken</h4>
+                    <p>VERBOTEN: border-radius: 0</p>
+                    <p>IMMER: 8px (Cards), 4px (Badges), 28px (Buttons)</p>
+                </div>
+                
+                <div class="info-box warning">
+                    <h4>❌ Keine farbigen Borders</h4>
+                    <p>VERBOTEN: border-color in Farben</p>
+                    <p>ERLAUBT: 2px solid #E0E0E0 (nur weiße Cards)</p>
+                </div>
+            </div>
+
+            <div class="two-column-grid">
+                <div class="info-box warning">
+                    <h4>❌ Keine Brand-Farben in Charts</h4>
+                    <p>VERBOTEN: #3DF5DC, #FF9626, #EFF933 in Charts</p>
+                    <p>ERLAUBT: Chart-Farben (#00D9B1, #3598DB, etc.)</p>
+                </div>
+                
+                <div class="info-box warning">
+                    <h4>❌ Keine Ampel-Labels auf farbigen Cards</h4>
+                    <p>VERBOTEN: ↑/→/↓ auf Teal, Yellow, Orange, Blue, Purple</p>
+                    <p>ERLAUBT: Nur auf weißen/Sand Cards</p>
+                </div>
+            </div>
+
+            <div class="info-box warning">
+                <h4>❌ Häufigste Fehler (Top 11)</h4>
+                <ol style="margin-left: 20px; margin-top: 15px;">
+                    <li style="margin-bottom: 8px;">Weiße Schrift auf Brand-Farben → Immer Charcoal (#333)</li>
+                    <li style="margin-bottom: 8px;">Fließtext mit 14px oder 15px → Immer 17px</li>
+                    <li style="margin-bottom: 8px;">box-shadow verwenden → border (nur weiße Cards)</li>
+                    <li style="margin-bottom: 8px;">Eckige Ecken (border-radius: 0) → border-radius: 8px/28px</li>
+                    <li style="margin-bottom: 8px;">Border auf farbigen Cards → border: none</li>
+                    <li style="margin-bottom: 8px;">Gradients (linear-gradient) → Solid Colors</li>
+                    <li style="margin-bottom: 8px;">Brand-Farben in Charts → chartColors verwenden</li>
+                    <li style="margin-bottom: 8px;">Ampel-Labels auf farbigen Cards → Nur weiße Labels</li>
+                    <li style="margin-bottom: 8px;">↑ mit Rot, ↓ mit Grün → ↑=Grün, ↓=Rot, →=Gelb</li>
+                    <li style="margin-bottom: 8px;">Card-Padding <30px → Minimum 30px</li>
+                    <li>Button Size Medium → Nur Large (48px)</li>
+                </ol>
             </div>
         </section>
-        
-        <!-- Footer -->
-        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--color-gray-medium); text-align: center; color: #666;">
-            <p>ImmoScout24 Design-System • Version 2.0</p>
-            <p style="margin-top: 8px; font-size: 14px;">Bei Fragen zur Implementierung kontaktiere das Creative Studio Team.</p>
-        </div>
+
+        <footer>
+            <p>Bei Fragen zur Implementierung kontaktiere das Creative Studio Team.</p>
+        </footer>
     </div>
 </body>
 </html>
