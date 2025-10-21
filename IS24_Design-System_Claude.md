@@ -1,4 +1,4 @@
-# ImmoScout24 Design-System - Basis-Prompt 2.0
+# ImmoScout24 Design-System - Basis-Prompt 2.1
 
 ## ⚠️ ABSOLUTE PRIORITÄT
 
@@ -60,7 +60,7 @@ Dieser Prompt definiert die Design-Guidelines für ImmoScout24-konforme Artefakt
             --font-size-xxxl: 34px;
             --font-size-xxl: 26px;
             --font-size-xl: 20px;
-            --font-size-base: 17px;
+            --font-size-base: 16px;
             --font-size-sm: 14px;
             --font-size-xs: 12px;
             
@@ -120,9 +120,9 @@ Dieser Prompt definiert die Design-Guidelines für ImmoScout24-konforme Artefakt
 
 **Fließtext / Body-Text:**
 ```
-ALLE normalen Absätze (p): 17px (var(--font-size-base))
-ALLE Beschreibungstexte: 17px (var(--font-size-base))
-ALLE längeren Texte: 17px (var(--font-size-base))
+ALLE normalen Absätze (p): 16px (var(--font-size-base))
+ALLE Beschreibungstexte: 16px (var(--font-size-base))
+ALLE längeren Texte: 16px (var(--font-size-base))
 ```
 
 **Überschriften:**
@@ -144,19 +144,19 @@ Button-Text: 16px (explizit)
 ❌ Fließtext mit 14px oder 15px
 ❌ "Kompakter machen" durch kleinere Schrift
 ❌ font-size-sm für normale Absätze oder Beschreibungen
-❌ Inline-styles die font-size unter 17px setzen (außer für Labels/Captions)
+❌ Inline-styles die font-size unter 16px setzen (außer für Labels/Captions)
 ```
 
 ### ERLAUBT
 ```
-✅ Alle <p> Tags ohne explizite Größenangabe = 17px
-✅ Alle Beschreibungstexte = 17px
-✅ Längere Texte auf Cards = 17px
+✅ Alle <p> Tags ohne explizite Größenangabe = 16px
+✅ Alle Beschreibungstexte = 16px
+✅ Längere Texte auf Cards = 16px
 ✅ Nur Labels und Hilfstext dürfen 12px/14px nutzen
 ```
 
 **Regel-Priorisierung:**
-Bei Unsicherheit: **Immer 17px (var(--font-size-base)) für Fließtext verwenden!**
+Bei Unsicherheit: **Immer 16px (var(--font-size-base)) für Fließtext verwenden!**
 
 ---
 
@@ -397,11 +397,11 @@ ALLE Texte, Überschriften, Labels: #333333 (Charcoal)
 EINZIGE Ausnahme: Weiße Schrift NUR auf Charcoal-Hintergrund (#333)
 ```
 
-### 2. Typografie ist IMMER 17px für Fließtext
+### 2. Typografie ist IMMER 16px für Fließtext
 ```
-ALLE Absätze (p): 17px
-ALLE Beschreibungen: 17px
-ALLE längeren Texte: 17px
+ALLE Absätze (p): 16px
+ALLE Beschreibungen: 16px
+ALLE längeren Texte: 16px
 
 NUR kleiner für:
   - Labels: 12px
@@ -546,7 +546,7 @@ Charcoal Card:
 ## Häufige Fehler (Top 11)
 
 1. ❌ Weiße Schrift auf Brand-Farben → ✅ Immer Charcoal (#333)
-2. ❌ Fließtext mit 14px oder 15px → ✅ Immer 17px (var(--font-size-base))
+2. ❌ Fließtext mit 14px oder 15px → ✅ Immer 16px (var(--font-size-base))
 3. ❌ box-shadow verwenden → ✅ border (nur weiße Cards)
 4. ❌ Eckige Ecken (border-radius: 0) → ✅ border-radius: 8px/28px
 5. ❌ Border auf farbigen Cards → ✅ border: none
@@ -577,7 +577,7 @@ Charcoal Card:
 
 ## Quick-Reference: Typografie
 
-**Fließtext:** 17px (var(--font-size-base))
+**Fließtext:** 16px (var(--font-size-base))
 **Überschriften:** h1=34px, h2=26px, h3=20px
 **Labels:** 12px (var(--font-size-xs))
 **Hilfstext:** 14px (var(--font-size-sm))
@@ -589,7 +589,7 @@ Charcoal Card:
 
 - [ ] Font: "Make it sans"
 - [ ] Text: Charcoal (#333) - außer auf Charcoal-BG
-- [ ] Fließtext: 17px (NICHT 14px oder 15px!)
+- [ ] Fließtext: 16px (NICHT 14px oder 15px!)
 - [ ] Farbige Cards: border: none
 - [ ] Weiße Cards: border: 2px solid gray-medium
 - [ ] ALLE Cards: border-radius: 8px
